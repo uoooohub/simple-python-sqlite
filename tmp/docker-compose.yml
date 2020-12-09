@@ -7,8 +7,9 @@ services:
     command: python -m http.server --cgi 8005
     environment:
       PYTHONUNBUFFERED: 1
+    volumes:
+        - ./src:/var/www/html
+        - ./static:/static
     ports:
       - '8005:8005'
-    volumes:
-      - '.:/var/www/html'
-    working_dir: /var/www/html
+    working_dir: ./src:/var/www/html
