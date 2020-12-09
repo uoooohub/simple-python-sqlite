@@ -3,7 +3,7 @@ version: '3'
 services:
 
   MY_WEB_SERVICE_NAME:
-    build: python:3.8-slim
+    image: python:3.8-slim
     command: python -m http.server --cgi 8000
     volumes:
         - ./src:/code
