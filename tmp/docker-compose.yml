@@ -17,6 +17,8 @@ services:
 
   MY_DB_SERVICE_NAME:
     build: ./python
+    environment:
+      PYTHONUNBUFFERED: 1
     command: python main.py
     volumes:
       - ./src:/code
