@@ -1,4 +1,5 @@
 import sqlite3
+import time
 
 def main(): 
     # 接続。なければDBを作成する。
@@ -20,6 +21,8 @@ def main():
     
     # コネクションをクローズ
     conn.close()
+    while True:
+        time.sleep(30)
 
 if __name__ == "__main__":
     main()
