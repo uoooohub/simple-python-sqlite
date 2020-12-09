@@ -13,3 +13,9 @@ services:
       - ./src:/code
     working_dir: /code
 
+  MY_DB_SERVICE_NAME:
+    build: ./python
+    command: python main.py
+    volumes:
+      - ./src:/code
+    working_dir: /code
