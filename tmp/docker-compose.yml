@@ -12,8 +12,6 @@ services:
     volumes:
       - ./src:/code
     working_dir: /code
-    depends_on:
-      - "MY_DB_SERVICE_NAME"
 
   MY_DB_SERVICE_NAME:
     build: ./python
@@ -23,3 +21,5 @@ services:
     volumes:
       - ./src:/code
     working_dir: /code
+    depends_on:
+      - "MY_WEB_SERVICE_NAME"
