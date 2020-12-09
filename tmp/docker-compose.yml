@@ -12,5 +12,4 @@ services:
     volumes:
       - ./src:/code
     working_dir: /code
-    depends_on:
-      - "MY_DB_SERVICE_NAME"
+
