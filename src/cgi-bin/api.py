@@ -27,10 +27,11 @@ try:
         import sqlite3
         conn = sqlite3.connect('/code/data/example.db')
         c = conn.cursor()
-        c.execute("select * from sqlite_master where type='table'")
+        c.execute("select * from articles")
         d = []
-        for row in c.fetchall():
-            d.append(row)
+        for row in c:
+            d.append(row['id'])
+        conn.close()
         print(json.dumps(_res(200,msg="ok",data=d)))
     else:
         print( json.dumps(_res(500,error="non apiName.value")) )

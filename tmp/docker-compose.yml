@@ -10,7 +10,7 @@ services:
     ports:
       - "8005:8005"
     volumes:
-      - './src:/code'
+      - ./src:/code
     working_dir: /code
 
   MY_WEB_SERVICE_NAME:
@@ -19,5 +19,5 @@ services:
     environment:
       PYTHONUNBUFFERED: 1
     volumes:
-      - './src:/code'
+      - ./src:/code
     working_dir: /code
