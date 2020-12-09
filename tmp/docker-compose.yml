@@ -13,10 +13,3 @@ services:
     ports:
       - "8000:8000"
     working_dir: ./src:/var/www/html
-
-  MY_DB_SERVICE_NAME:
-    build: ./python
-    command: python main.py
-    volumes:
-        - ./src:/var/www/html
-        - ./static:/static
