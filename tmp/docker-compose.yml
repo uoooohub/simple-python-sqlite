@@ -12,3 +12,12 @@ services:
     volumes:
       - './src:/code'
     working_dir: /code
+
+  MY_WEB_SERVICE_NAME:
+    build: ./python
+    command: python main.py
+    environment:
+      PYTHONUNBUFFERED: 1
+    volumes:
+      - './src:/code'
+    working_dir: /code
