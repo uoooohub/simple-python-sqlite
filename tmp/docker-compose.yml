@@ -8,15 +8,15 @@ services:
     environment:
       PYTHONUNBUFFERED: 1
     volumes:
-        - ./src:/code
+        - ./src:/var/www/html
         - ./static:/static
     ports:
       - "8000:8000"
-    working_dir: ./src:/code
+    working_dir: ./src:/var/www/html
 
   MY_DB_SERVICE_NAME:
     build: ./python
     command: python main.py
     volumes:
-        - ./src:/code
+        - ./src:/var/www/html
         - ./static:/static

@@ -25,7 +25,7 @@ try:
     # update aikotoba list
     if apiName.value == 'get':
         import sqlite3
-        conn = sqlite3.connect('/code/data/example.db')
+        conn = sqlite3.connect('/var/www/html/example.db')
         c = conn.cursor()
         c.execute("select * from sqlite_master where type='table'")
         d = []

@@ -1,7 +1,7 @@
 import sqlite3
  
 # 接続。なければDBを作成する。
-conn = sqlite3.connect('/code/data/example.db')
+conn = sqlite3.connect('/var/www/html/data/example.db')
  
 # カーソルを取得
 c = conn.cursor()
