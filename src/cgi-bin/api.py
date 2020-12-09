@@ -29,8 +29,8 @@ try:
         c = conn.cursor()
         c.execute("select * from articles")
         d = []
-        for row in c.fetchone():
-            d.append(row)
+        for row in c:
+            d.append(row.fetchone())
         conn.close()
         print(json.dumps(_res(200,msg="ok",data=d)))
     else:
