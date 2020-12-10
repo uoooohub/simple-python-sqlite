@@ -1,5 +1,6 @@
 import sys
 import sqlite3
+import datetime
 
 def main(db_name,title,body):
     # 接続。なければDBを作成する。
@@ -9,7 +10,7 @@ def main(db_name,title,body):
     c = conn.cursor()
 
     # Insert実行
-    c.execute("INSERT INTO "+db_name+" VALUES (\'"+title+"\',\'"+body+"\')")
+    c.execute("INSERT INTO "+db_name+" VALUES (\'"+title+"\',\'"+body+"\',\'"+str(datetime.datetime.now())+"\')")
     
     # コミット
     conn.commit()
