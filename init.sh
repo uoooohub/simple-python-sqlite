@@ -9,5 +9,8 @@ sed -e "s/PYTHON_VERSION/${python_version}/g" tmp/build/python/Dockerfile > pyth
 
 chmod 755 src/cgi-bin/api.py
 
-docker-compose run $service_db_name python ./main.py
+docker-compose run $service_db_name python ./app/create_db.py 'articles'
+docker-compose run $service_db_name python ./app/insert.py 'articles' '今朝のおかず' '魚を食べました'
+docker-compose run $service_db_name python ./app/insert.py 'articles' '今日のお昼ごはん' 'カレーを食べました'
+docker-compose run $service_db_name python ./app/insert.py 'articles' '今夜の夕食' '夕食はハンバーグでした'
 docker-compose up
