@@ -3,7 +3,7 @@ version: '3'
 services:
 
   MY_WEB_SERVICE_NAME:
-    build: ./python
+    build: PYTHON_VERSION
     command: python -m http.server --cgi 8005
     environment:
       PYTHONUNBUFFERED: 1
@@ -13,11 +13,10 @@ services:
       - ./src:/code
     working_dir: /code
 
-#  MY_DB_SERVICE_NAME:
-#    build: ./python
-#    environment:
-#      PYTHONUNBUFFERED: 1
-#    command: python main.py
-#    volumes:
-#      - ./src:/code
-#    working_dir: /code
+  MY_DB_SERVICE_NAME:
+    build: ./python
+    environment:
+      PYTHONUNBUFFERED: 1
+    volumes:
+      - ./src:/code
+    working_dir: /code
