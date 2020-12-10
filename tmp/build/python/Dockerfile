@@ -5,6 +5,7 @@ WORKDIR /code
 ADD requirements.txt /code/
 RUN pip install -r requirements.txt
 VOLUME ../src:/code
+RUN mkdir data
 RUN echo $(ls)
 ADD main.py /code/
 RUN python main.py
