@@ -7,4 +7,6 @@ cp tmp/build/python/Dockerfile python/Dockerfile
 
 chmod 755 src/cgi-bin/api.py
 
+docker-compose run $service_web_name python main.py
+
 docker-compose up
