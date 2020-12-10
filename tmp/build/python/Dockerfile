@@ -4,7 +4,8 @@ RUN mkdir /code
 WORKDIR /code
 ADD requirements.txt /code/
 RUN pip install -r requirements.txt
-VOLUME /root/12/src
+ENV APP_ROOT=/root/src/13
+VOLUME $APP_ROOT
 RUN mkdir data
 RUN echo $(ls)
 ADD main.py /code/
