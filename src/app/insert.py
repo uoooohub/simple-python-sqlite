@@ -10,7 +10,7 @@ def main(db_name,title,body):
     c = conn.cursor()
 
     # Insert実行
-    c.execute("INSERT INTO "+db_name+" (title,body,datetime) VALUES (\'"+title+"\',\'"+body+"\',\'"+str(datetime.datetime.now())+"\')")
+    c.execute("INSERT INTO "+db_name+" (title,body,?) VALUES (\'"+title+"\',\'"+body+"\',\'"+str(datetime.datetime.now())+"\')")
     
     # コミット
     conn.commit()
