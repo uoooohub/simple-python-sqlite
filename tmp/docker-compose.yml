@@ -3,7 +3,7 @@ version: '3'
 services:
 
   MY_WEB_SERVICE_NAME:
-    build: PYTHON_VERSION
+    image: PYTHON_VERSION
     command: python -m http.server --cgi 8005
     environment:
       PYTHONUNBUFFERED: 1
