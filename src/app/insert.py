@@ -1,3 +1,4 @@
+import sys
 import sqlite3
 
 def main(db_name,title,body):

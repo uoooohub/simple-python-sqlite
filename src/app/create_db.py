@@ -1,5 +1,5 @@
+import sys
 import sqlite3
-import time
 
 def main(db_name):
     # 接続。なければDBを作成する。
