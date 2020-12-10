@@ -9,7 +9,7 @@ def main(db_name):
     c = conn.cursor()
     
     # テーブルを作成
-    c.execute('CREATE TABLE '+db_name+' (id integer primary key autoincrement, title varchar(1024), body text, created datetime)')    
+    c.execute('CREATE TABLE '+db_name+' (id integer primary key autoincrement, title varchar(1024), body text, dtime created datetime)')    
     # コミット
     conn.commit()
     
