@@ -14,4 +14,5 @@ docker-compose run $service_db_name python ./app/insert.py 'articles' '今朝の
 docker-compose run $service_db_name python ./app/insert.py 'articles' '今日のお昼ごはん' 'カレーを食べました'
 docker-compose run $service_db_name python ./app/delete.py 'articles' '2'
 docker-compose run $service_db_name python ./app/insert.py 'articles' '今夜の夕食' '夕食はハンバーグでした'
+docker-compose run $service_db_name python ./app/insert.py 'articles' '今日のお昼ごはん' 'カレーを食べました'
 docker-compose up
