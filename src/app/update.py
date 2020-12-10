@@ -1,7 +1,7 @@
 import sys
 import sqlite3
 
-def main(db_name,id):
+def main(db_name,title,body):
     # 接続。なければDBを作成する。
     conn = sqlite3.connect('/code/data/example.db')
     
@@ -9,7 +9,7 @@ def main(db_name,id):
     c = conn.cursor()
 
     # Insert実行
-    c.execute("DELETE FROM "+str(db_name)+" WHERE id=\'"+str(id)+"\'")
+    c.execute("UPDATE "+str(db_name)+" set body=\'"+str(body)+"\' WHERE title=\'"+str(title)+"\'")
     
     # コミット
     conn.commit()
@@ -20,5 +20,6 @@ def main(db_name,id):
 if __name__ == "__main__":
     args = sys.argv
     db_name = args[1]
-    id = args[2]
-    main(db_name,id)
+    title = args[2]
+    body = args[3]
+    main(db_name,title,body)
