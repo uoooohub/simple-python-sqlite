@@ -7,15 +7,14 @@ sed -i -e "s/MY_DB_SERVICE_NAME/${service_db_name}/g" docker-compose.yml
 sed -i -e "s/PYTHON_VERSION/${python_version}/g" docker-compose.yml
 sed -e "s/PYTHON_VERSION/${python_version}/g" tmp/build/python/Dockerfile > python/Dockerfile
 
-chmod 700 src/app -R 
 chmod 755 src/cgi-bin/api.py
 
-docker-compose run $service_db_name python ./app/create_db.py 'articles'
-docker-compose run $service_db_name python ./app/insert.py 'articles' '今朝のおかず' '魚を食べました'
-docker-compose run $service_db_name python ./app/insert.py 'articles' '今日のお昼ごはん' 'カレーを食べました'
-docker-compose run $service_db_name python ./app/delete.py 'articles' '2'
-docker-compose run $service_db_name python ./app/insert.py 'articles' '今夜の夕食' '夕食はハンバーグでした'
-docker-compose run $service_db_name python ./app/insert.py 'articles' '今日のお昼ごはん' 'カレーを食べました'
-docker-compose run $service_db_name python ./app/update.py 'articles' '今朝のおかず' '肉を食べました'
+docker-compose run $service_db_name python ./cgi-bin/app/create_db.py 'articles'
+docker-compose run $service_db_name python ./cgi-bin/app/insert.py 'articles' '今朝のおかず' '魚を食べました'
+docker-compose run $service_db_name python ./cgi-bin/app/insert.py 'articles' '今日のお昼ごはん' 'カレーを食べました'
+docker-compose run $service_db_name python ./cgi-bin/app/delete.py 'articles' '2'
+docker-compose run $service_db_name python ./cgi-bin/app/insert.py 'articles' '今夜の夕食' '夕食はハンバーグでした'
+docker-compose run $service_db_name python ./cgi-bin/app/insert.py 'articles' '今日のお昼ごはん' 'カレーを食べました'
+docker-compose run $service_db_name python ./cgi-bin/app/update.py 'articles' '今朝のおかず' '肉を食べました'
 
 docker-compose up
