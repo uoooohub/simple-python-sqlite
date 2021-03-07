@@ -7,6 +7,7 @@ sed -i -e "s/MY_DB_SERVICE_NAME/${service_db_name}/g" docker-compose.yml
 sed -i -e "s/PYTHON_VERSION/${python_version}/g" docker-compose.yml
 sed -e "s/PYTHON_VERSION/${python_version}/g" tmp/build/python/Dockerfile > python/Dockerfile
 
+chmod 700 src/app -R 
 chmod 755 src/cgi-bin/api.py
 
 docker-compose run $service_db_name python ./app/create_db.py 'articles'
